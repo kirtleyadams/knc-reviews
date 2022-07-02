@@ -10,6 +10,18 @@ const typeDefs = gql`
         email: String
     }
 
+    type Movie {
+        _id: ID
+        title: String
+        plot: String
+        genre: String
+        year: Int
+        poster: String
+        director: String
+        rating: Int
+        review: String
+    }
+
     type Auth {
         token: String
         user: User
@@ -27,6 +39,16 @@ const typeDefs = gql`
             username: String!, 
             email: String!, 
             password: String!,
+        ): Auth
+        createMovie(
+            title: String!,
+            plot: String!,
+            genre: String!,
+            year: Int!,
+            poster: String!,
+            director: String!,
+            rating: Int!,
+            review: String!,
         ): Auth
         login(
             email: String!, 

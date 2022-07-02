@@ -1,14 +1,20 @@
 const {AuthenticationError} = require('apollo-server-express');
-const { User, } = require('../models');
+const { User, Movie } = require('../models');
 const utils = require('../utils/auth');
 
 const resolvers = {
 	Query: {
 		user: async (_root, {id}) => {
-			return await User.findById(id).populate({path:"playerId"});
+			return await User.findById(id);
 		},
 		users: async (_root, _args, context) => {
-			return await User.find({}).populate({path:"playerId"});
+			return await User.find({});
+		},
+		movie: async (_root, {id}) => {
+			return ,await Movie.findById(id);
+		},
+		movies: async (_root, _args, context) => {
+			return await Movie.find({});
 		},
 	},
 
@@ -21,10 +27,22 @@ const resolvers = {
 				email,
 				password,
 			});
-
 			const token = utils.signToken(user.firstName, user._id);
 			console.log(token);
 			return {token, user};
+		},
+		createMovie: async (_root, {title, plot, genre, year, poster, director, rating, review}) => {
+			const movie = await Movie.create({
+				title,
+				plot,
+				genre,
+				year,
+				poster,
+				director,
+				rating,
+				review,
+			});
+			console.log('Created Movie', movie)
 		},
 		login: async (_root, {email, password}) => {
 			const userFound = await User.findOne({email});
@@ -40,12 +58,6 @@ const resolvers = {
 			throw new AuthenticationError('You must provide correct credentials');
 		},
 	},
-
-	// Reviewer: { 
-	// 	fullName: (root) => {
-	// 		return `${root.firstName} ${root.lastName}`;
-	// 	}
-	// }
 };
 
 module.exports = resolvers;
