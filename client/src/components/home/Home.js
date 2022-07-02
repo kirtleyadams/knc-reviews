@@ -52,7 +52,7 @@ const Home = () => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -66,7 +66,7 @@ const Home = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="secondary"
               >
                 <MenuIcon />
               </IconButton>
@@ -112,7 +112,7 @@ const Home = () => {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              REVIEWS
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
