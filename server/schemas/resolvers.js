@@ -41,11 +41,11 @@ const resolvers = {
 		},
 	},
 
-	Reviewer: { 
-		fullName: (root) => {
-			return `${root.firstName} ${root.lastName}`;
-		}
-	}
+	// Reviewer: { 
+	// 	fullName: (root) => {
+	// 		return `${root.firstName} ${root.lastName}`;
+	// 	}
+	// }
 };
 
 module.exports = resolvers;
