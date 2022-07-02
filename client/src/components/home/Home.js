@@ -52,7 +52,7 @@ const Home = () => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "white",
+                color: "inherit",
                 textDecoration: "none",
               }}
             >
@@ -66,7 +66,7 @@ const Home = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="secondary"
+                color="inherit"
               >
                 <MenuIcon />
               </IconButton>

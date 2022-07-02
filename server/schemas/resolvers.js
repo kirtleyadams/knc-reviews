@@ -11,7 +11,7 @@ const resolvers = {
 			return await User.find({});
 		},
 		movie: async (_root, {id}) => {
-			return ,await Movie.findById(id);
+			return await Movie.findById(id);
 		},
 		movies: async (_root, _args, context) => {
 			return await Movie.find({});
