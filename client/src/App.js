@@ -4,8 +4,7 @@ import Home from "./components/home/Home";
 const App = () => {
   return (
     <div>
-      <Home />
-      {/* <Routes>
+      <Routes>
         <Route 
           path="/" 
           element={<Home />} 
@@ -14,8 +13,7 @@ const App = () => {
           path="/home" 
           element={<Home />} 
         />
-        
-      </Routes> */}
+      </Routes>
     </div>
   );
 };
