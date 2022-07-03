@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-const FETCH_MOVIES = gql`
-    query allMovies {
+const ALL_MOVIES = gql`
+    query movies {
         movies {
             title
             plot
@@ -14,3 +14,7 @@ const FETCH_MOVIES = gql`
         }
     }
 `;
+
+export {
+    ALL_MOVIES,
+};
