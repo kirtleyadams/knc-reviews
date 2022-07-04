@@ -5,6 +5,8 @@ import { ALL_MOVIES } from '../../graphql/queries/fetchMovies';
 import "./home.css";
 
 import Nav from '../nav/Nav';
+import Grid from '@mui/material/Grid';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -32,6 +34,23 @@ const Home = () => {
       
         <Nav/>
       <h1>Most Recent</h1>
+      <Grid container spacing={2}>
+        <Grid item xs={2}>
+            <Grid>1</Grid>
+        </Grid>
+        <Grid item xs={2}>
+            <Grid>2</Grid>
+        </Grid>
+        <Grid item xs={2}>
+            <Grid>3</Grid>
+        </Grid>
+        <Grid item xs={2}>
+            <Grid>4</Grid>
+        </Grid>
+        <Grid item xs={2}>
+            <Grid>5</Grid>
+        </Grid>
+       </Grid>
 
       <Table sx={{ minWidth: 100 }} aria-label="simple table">
         <TableHead>
