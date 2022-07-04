@@ -34,9 +34,11 @@ const Home = () => {
       
         <Nav/>
       <h1>Most Recent</h1>
-      <Grid container spacing={2}>
+      <Grid align='center' container spacing={3}>
         <Grid item xs={2}>
-            <Grid>1</Grid>
+            <Grid>1
+                
+            </Grid>
         </Grid>
         <Grid item xs={2}>
             <Grid>2</Grid>
