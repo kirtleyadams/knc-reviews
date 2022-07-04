@@ -6,6 +6,8 @@ import "./home.css";
 
 import Nav from '../nav/Nav';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -34,10 +36,37 @@ const Home = () => {
       
         <Nav/>
       <h1>Most Recent</h1>
-      <Grid align='center' container spacing={3}>
+      <Box
+      sx={{
+        display: 'flex',
+        justifyContent:'center',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 1,
+          width: 200,
+          height: 400,
+          margin: 2,
+          
+        },
+      }}
+    >
+      <Paper elevation={3} >
+        Title
+        rating
+        review
+      </Paper>
+
+      <Paper elevation={3} />
+      <Paper elevation={3} />
+      <Paper elevation={3} />
+      <Paper elevation={3} />
+    </Box>
+      {/* <Grid align='center' container spacing={3}>
         <Grid item xs={2}>
             <Grid>1
-                
+                Title
+                Rating
+                Review
             </Grid>
         </Grid>
         <Grid item xs={2}>
@@ -52,9 +81,9 @@ const Home = () => {
         <Grid item xs={2}>
             <Grid>5</Grid>
         </Grid>
-       </Grid>
-
-      <Table sx={{ minWidth: 100 }} aria-label="simple table">
+       </Grid> */}
+       </>
+      {/* <Table sx={{ minWidth: 100 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Title</TableCell>
@@ -76,8 +105,8 @@ const Home = () => {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
-    </>
+      </Table> */}
+    
   };
 
 export default Home;
