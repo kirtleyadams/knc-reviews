@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 
 const Library = () => {
   const movies = useQuery(ALL_MOVIES);
-  const moviesListData = movies.data?.recentMovies || [];
+  const moviesListData = movies.data?.allMovies || [];
   const loading = moviesListData.loading;
 
   return loading ? (
