@@ -16,7 +16,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import AppBar from '@mui/material/AppBar';
 
 
-const pages = ["Movies", "Blog"];
+const pages = ["Library", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Nav = () => {
@@ -91,6 +91,7 @@ const Nav = () => {
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: "block", md: "none" },
+                  backgroundColor: "black"
                 }}
               >
                 {pages.map((page) => (

@@ -46,6 +46,8 @@ const Home = () => {
         </Paper>
         ))}
       </Box>
+
+      <h2> View Library</h2>
     </>
   );
 };
