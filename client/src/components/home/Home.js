@@ -39,7 +39,6 @@ const Home = () => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               width='100'
             >
-              <TableCell align="center">{index + 1}</TableCell>
               <TableCell align="center">{movie.title}</TableCell>
               <TableCell align="center">{movie.rating}</TableCell>
               <TableCell align="center">{movie.review}</TableCell>
