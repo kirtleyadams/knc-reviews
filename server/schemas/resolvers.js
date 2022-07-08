@@ -13,7 +13,10 @@ const resolvers = {
 		movie: async (_root, {id}) => {
 			return await Movie.findById(id);
 		},
-		movies: async (_root, _args, context) => {
+		recentMovies: async (_root, _args, context) => {
+			return await Movie.find({}).limit(4);
+		},
+		allMovies: async (_root, _args, context) => {
 			return await Movie.find({});
 		},
 	},

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
+import Library from "./components/library/Library";
 
 const App = () => {
   return (
@@ -12,6 +13,10 @@ const App = () => {
         <Route 
           path="/home" 
           element={<Home />} 
+        />
+        <Route 
+          path="/library" 
+          element={<Library />} 
         />
       </Routes>
     </div>

@@ -1,15 +1,15 @@
 import { useQuery } from "@apollo/client";
 // import { useState } from "react";
-import { RECENT_MOVIES } from "../../graphql/queries/fetchMovies";
+import { ALL_MOVIES } from "../../graphql/queries/fetchMovies";
 
-import "./home.css";
+import "../home/home.css";
 
 import Nav from "../nav/Nav";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 
-const Home = () => {
-  const movies = useQuery(RECENT_MOVIES);
+const Library = () => {
+  const movies = useQuery(ALL_MOVIES);
   const moviesListData = movies.data?.recentMovies || [];
   const loading = moviesListData.loading;
 
@@ -20,7 +20,7 @@ const Home = () => {
   ) : (
     <>
       <Nav />
-      <h1>Most Recent</h1>
+      <h1>All Reviews</h1>
       <Box
         sx={{
           display: "flex",
@@ -46,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Library;
