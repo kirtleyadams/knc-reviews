@@ -11,28 +11,19 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-
-
 const Home = () => {
   const movies = useQuery(ALL_MOVIES);
-  const moviesListData = movies.data?.allMovies || [];
+  const moviesListData = movies.data?.movies || [];
   const loading = moviesListData.loading;
-  // movie data not being loaded
-  console.log(moviesListData)
-
-
 
   return loading ?
     <>
       <h1>Loading...</h1>
     </>
     :
-
     <>
-      
-        <Nav/>
+      <Nav/>
       <h1>Most Recent</h1>
-
       <Table sx={{ minWidth: 100 }} aria-label="simple table">
         <TableHead>
           <TableRow>
