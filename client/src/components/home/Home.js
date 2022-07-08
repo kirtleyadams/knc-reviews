@@ -4,19 +4,11 @@ import { ALL_MOVIES } from "../../graphql/queries/fetchMovies";
 
 import "./home.css";
 
-
 import Nav from "../nav/Nav";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 // import Typography from '@material-ui/core/';
-
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-
 
 const Home = () => {
   const movies = useQuery(ALL_MOVIES);
@@ -27,7 +19,6 @@ const Home = () => {
     <>
       <h1>Loading...</h1>
     </>
-
   ) : (
     <>
       <Nav />
@@ -45,81 +36,16 @@ const Home = () => {
           },
         }}
       >
+      {moviesListData.map((movie, index) => (
         <Paper elevation={3}>
-          <p> title</p>
-          <p>rating</p>
-          <p>Review</p>
+          <p>{movie.title}</p>
+          <p>{movie.rating}</p>
+          <p>{movie.review}</p>
         </Paper>
-
-        <Paper elevation={3}>
-          <p> title</p>
-          <p>rating</p>
-          <p>Review</p>
-        </Paper>
-        <Paper elevation={3}>
-          <p> title</p>
-          <p>rating</p>
-          <p>Review</p>
-        </Paper>
-        <Paper elevation={3}>
-          <p> title</p>
-          <p>rating</p>
-          <p>Review</p>
-        </Paper>
-        <Paper elevation={3}>
-          <p> title</p>
-          <p>rating</p>
-          <p>Review</p>
-        </Paper>
+        ))}
       </Box>
-      {/* <Grid align='center' container spacing={3}>
-        <Grid item xs={2}>
-            <Grid>1
-                Title
-                Rating
-                Review
-            </Grid>
-        </Grid>
-        <Grid item xs={2}>
-            <Grid>2</Grid>
-        </Grid>
-        <Grid item xs={2}>
-            <Grid>3</Grid>
-        </Grid>
-        <Grid item xs={2}>
-            <Grid>4</Grid>
-        </Grid>
-        <Grid item xs={2}>
-            <Grid>5</Grid>
-        </Grid>
-       </Grid> */}
     </>
   );
-  {
-    /* <Table sx={{ minWidth: 100 }} aria-label="simple table">
-
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Title</TableCell>
-            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rating</TableCell>
-            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Review</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody >
-          {moviesListData.map((movie, index) => (
-            <TableRow
-              key={movie._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              width='100'
-            >
-              <TableCell align="center">{movie.title}</TableCell>
-              <TableCell align="center">{movie.rating}</TableCell>
-              <TableCell align="center">{movie.review}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table> */
-  }
 };
 
 export default Home;
