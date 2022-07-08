@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const ALL_MOVIES = gql`
+export const RECENT_MOVIES = gql`
     query movies {
-        movies {
+        recentMovies {
             title
             plot
             genre
@@ -15,6 +15,17 @@ export const ALL_MOVIES = gql`
     }
 `;
 
-// export {
-//     ALL_MOVIES,
-// };
+export const ALL_MOVIES = gql`
+    query movies {
+        allMovies {
+            title
+            plot
+            genre
+            year
+            poster
+            director
+            rating
+            review
+        }
+    }
+`;
