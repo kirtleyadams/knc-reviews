@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const ALL_MOVIES = gql`
+export const ALL_MOVIES = gql`
     query movies {
         movies {
             title
@@ -15,6 +15,6 @@ const ALL_MOVIES = gql`
     }
 `;
 
-export {
-    ALL_MOVIES,
-};
+// export {
+//     ALL_MOVIES,
+// };
