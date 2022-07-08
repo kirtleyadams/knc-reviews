@@ -26,22 +26,26 @@ const Home = () => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
+          textAlign: "center",
           "& > :not(style)": {
             m: 1,
-            width: 200,
-            height: 400,
+            width: 250,
+            height: 350,
             margin: 2,
+            padding: 5
           },
         }}
       >
       {moviesListData.map((movie, index) => (
         <Paper elevation={3} key={movie._id}>
           <p>{movie.title}</p>
-          <p>{movie.rating}</p>
+          <p>Rating: {movie.rating}</p>
           <p>{movie.review}</p>
         </Paper>
         ))}
       </Box>
+
+      <h2> View Library</h2>
     </>
   );
 };
