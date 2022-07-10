@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Library from "./components/library/Library";
+import Review from "./components/review/Review";
 
 const App = () => {
   return (
@@ -17,6 +18,10 @@ const App = () => {
         <Route 
           path="/library" 
           element={<Library />} 
+        />
+        <Route 
+          path="/review" 
+          element={<Review />} 
         />
       </Routes>
     </div>
