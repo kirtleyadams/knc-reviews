@@ -7,6 +7,7 @@ import "./home.css";
 import Nav from "../nav/Nav";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import {Link} from 'react-router-dom';
 
 const Home = () => {
   const movies = useQuery(RECENT_MOVIES);
@@ -45,7 +46,7 @@ const Home = () => {
         ))}
       </Box>
 
-      <h2> View Library</h2>
+      <h2> <Link to ="/library">View Library</Link> </h2>
     </>
   );
 };
