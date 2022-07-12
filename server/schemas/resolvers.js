@@ -34,7 +34,7 @@ const resolvers = {
 			console.log(token);
 			return {token, user};
 		},
-		createMovie: async (_root, {title, plot, genre, year, poster, director, rating, review}) => {
+		createReview: async (_root, {title, plot, genre, year, poster, director, rating, review}) => {
 			const movie = await Movie.create({
 				title,
 				plot,
@@ -45,7 +45,7 @@ const resolvers = {
 				rating,
 				review,
 			});
-			console.log('Created Movie', movie)
+			console.log('Created Review', movie)
 		},
 		login: async (_root, {email, password}) => {
 			const userFound = await User.findOne({email});
