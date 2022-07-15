@@ -39,6 +39,7 @@ const Home = () => {
       >
       {moviesListData.map((movie, index) => (
         <Paper elevation={3} key={movie._id}>
+          <img src={movie.poster} alt={movie.title} width="225" height="250"></img>
           <p>{movie.title}</p>
           <p>Rating: {movie.rating}</p>
           <p>{movie.review}</p>

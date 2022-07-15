@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-// const jwt = require('jsonwebtoken');
-// const utils = require('./utils/auth');
+const jwt = require('jsonwebtoken');
+const utils = require('./utils/auth');
 const { resolvers, typeDefs } = require('./schemas');
 const db = require('./config/connection');
 const PORT = process.env.PORT || 3001;
