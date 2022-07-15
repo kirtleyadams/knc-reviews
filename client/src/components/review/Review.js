@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { CREATE_REVIEW } from '../../graphql/mutations/createReview';
+import { CREATE_REVIEW } from '../../graphql/mutations/createReview';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const Review = () => {
         rating: '',
         review: '',
     })
-    // const [createReviewMutation, {_data, _loading, error}] = useMutation(CREATE_REVIEW);
+    const [createReviewMutation, {_data, _loading, error}] = useMutation(CREATE_REVIEW);
     const navigate = useNavigate();
 
     const handleChange = (event) => {
@@ -49,34 +49,34 @@ const Review = () => {
             plot: formState.plot, 
             genre: formState.genre,
             year: formState.year,
-            poster: formState.posters,
+            poster: formState.poster,
             director: formState.director,
             rating: formState.rating,
             review: formState.review,
         };
         console.log(body);
-        // try {
-        //     let res = await createReviewMutation({
-        //         variables: body
-        //     });
-        //     navigate('/home');
-        //     if (!error) {
-        //         setFormState({
-        //             title: '',
-        //             plot: '',
-        //             genre: '',
-        //             year: '',
-        //             poster: '',
-        //             director: '',
-        //             rating: '',
-        //             review: '',
-        //         })
-        //     } else {
-        //         console.error(error)
-        //     }
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        try {
+            let res = await createReviewMutation({
+                variables: body
+            });
+            navigate('/home');
+            if (!error) {
+                setFormState({
+                    title: '',
+                    plot: '',
+                    genre: '',
+                    year: '',
+                    poster: '',
+                    director: '',
+                    rating: '',
+                    review: '',
+                })
+            } else {
+                console.error(error)
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (

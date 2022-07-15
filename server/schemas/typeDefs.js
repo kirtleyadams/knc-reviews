@@ -42,7 +42,7 @@ const typeDefs = gql`
             email: String!, 
             password: String!,
         ): Auth
-        createMovie(
+        createReview(
             title: String!,
             plot: String!,
             genre: String!,
