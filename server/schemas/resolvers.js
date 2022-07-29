@@ -47,14 +47,14 @@ const resolvers = {
 			});
 			console.log('Created Review', movie)
 		},
-		login: async (_root, {email, password}) => {
-			const userFound = await User.findOne({email});
+		login: async (_root, {username, password}) => {
+			const userFound = await User.findOne({username});
 			if (!userFound) {
-				throw new AuthenticationError('No user found with this email');
+				throw new AuthenticationError('No user found with this username');
 			}
 			// successfully logged in
 			if (userFound.password === password) {
-				const token = utils.signToken(userFound.firstName, userFound._id);
+				const token = utils.signToken(userFound.username, userFound._id);
 				console.log(userFound);
 				return {token, userFound};
 			}
