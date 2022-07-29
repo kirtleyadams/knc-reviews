@@ -56,11 +56,17 @@ const Review = () => {
         };
         console.log(body);
         try {
+            console.log('working')
             let res = await createReviewMutation({
                 variables: body
             });
+            const token = res.data.review.token;
+            localStorage.setItem('token', token);
+            console.log(res);
+            console.log('63 working')
             navigate('/home');
             if (!error) {
+                console.log('65 working')
                 setFormState({
                     title: '',
                     plot: '',
@@ -75,6 +81,7 @@ const Review = () => {
                 console.error(error)
             }
         } catch (err) {
+            console.log('not working')
             console.log(err);
         }
     };

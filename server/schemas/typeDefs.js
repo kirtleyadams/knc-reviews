@@ -53,7 +53,7 @@ const typeDefs = gql`
             review: String!,
         ): Auth
         login(
-            email: String!, 
+            username: String!, 
             password: String!
         ): Auth
     }

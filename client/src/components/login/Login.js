@@ -14,7 +14,7 @@ const Login = () => {
         <>
             <Nav />
             <h1>Login</h1>
-            {/* <Form
+            <Form
                 onSubmit={async (values) => {
                     await loginMutation({
                         variables: {
@@ -28,7 +28,7 @@ const Login = () => {
                     });
                 }}
                 initialValues={{
-                    email: '',
+                    username: '',
                     password: ''
                 }}
                 render={({values, handleSubmit, form}) => {
@@ -36,9 +36,9 @@ const Login = () => {
                     return (
                         <div>
                             <Field
-                                name='email'
+                                name='username'
                                 component='input'
-                                placeholder='Email'
+                                placeholder='Username'
                             />
                             <Field 
                                 name='password'
@@ -57,7 +57,7 @@ const Login = () => {
                         </div>
                     )
                 }}
-            /> */}
+            />
         </>
     )
 }
